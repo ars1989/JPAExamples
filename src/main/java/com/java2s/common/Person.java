@@ -11,6 +11,28 @@ public class Person {
 	private Long id;
 	private String name;
 	private String surname;
+
+	@Override
+	public String toString() {
+		return "Person{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", surname='" + surname + '\'' +
+				", address='" + address + '\'' +
+				'}';
+	}
+
+	private String address;
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
 	
 	public Person() {}
 
@@ -36,9 +58,5 @@ public class Person {
 	}
 	public void setSurname(String surname) {
 		this.surname = surname;
-	}
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", surname=" + surname + "]";
 	}
 }
