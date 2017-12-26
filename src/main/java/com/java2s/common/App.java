@@ -11,8 +11,8 @@ public class App {
         "applicationContext.xml");
     PersonDaoImpl dao = (PersonDaoImpl) context.getBean("personDao");
 
-    Person peter = new Person("XML", "HTML");
-    Person nasta = new Person("Java", "SQL");
+    Person peter = new Person("XML", "HTML","Munich");
+    Person nasta = new Person("Java", "SQL","Munich-ottobrunn");
 
     dao.save(peter);
     dao.save(nasta);

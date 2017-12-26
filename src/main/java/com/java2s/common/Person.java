@@ -2,27 +2,18 @@ package com.java2s.common;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Person {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String surname;
 
-	@Override
-	public String toString() {
-		return "Person{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", surname='" + surname + '\'' +
-				", address='" + address + '\'' +
-				'}';
-	}
-
-	private String address;
+    private String address;
 
 	public String getAddress() {
 		return address;
@@ -36,9 +27,20 @@ public class Person {
 	
 	public Person() {}
 
-	public Person(String name, String surname) {
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    public Person(String name, String surname, String address) {
 		this.name = name;
 		this.surname = surname;
+		this.address = address;
 	}
 	
 	public Long getId() {
